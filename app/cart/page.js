@@ -1,10 +1,24 @@
-import Link from "next/link";
+import {age, name} from "./data.js"
+import hello from "./hello.js"
 
 export default function Cart() {
   return (
     <div>
-      <h1 className="title">장바구니입니다.</h1>
-      <Link href="/cart/payment">결제</Link>
-    </div >
-  );
+      {hello}
+      <h4 className="title">Cart</h4>
+      <CartItem/>
+      <CartItem/>
+      <CartItem/>
+    </div>
+  )
+} 
+
+function CartItem() {
+  return (
+    <div className="cart-item">
+      <p>상품명 {age}</p>
+      <p>$40</p>
+      <p>1개</p>
+    </div>
+  )
 }
